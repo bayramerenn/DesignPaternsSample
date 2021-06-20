@@ -5,7 +5,7 @@ namespace WebApp.TemplatePatern.Models
     public class AppUser:IdentityUser
     {
           public string PictureUrl { get; set; }
-          public string Desctiption { get; set; }
+          public string Description { get; set; }
           
     }
 }

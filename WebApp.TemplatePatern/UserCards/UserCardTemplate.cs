@@ -22,7 +22,7 @@ namespace WebApp.TemplatePatern.UserCards
             sb.Append(SetPicture());
             sb.Append($@"<div class='card-body'>
                             <h5>{AppUser.UserName}</h5>
-                            <p>{AppUser.Desctiption}</p>
+                            <p>{AppUser.Description}</p>
                     ");
             sb.Append(SetFoouter());
             sb.Append("</div>");

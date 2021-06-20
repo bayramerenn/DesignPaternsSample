@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using DinkToPdf.Contracts;
+using DinkToPdf;
 
 namespace BaseProject
 {
@@ -27,10 +29,9 @@ namespace BaseProject
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddHttpContextAccessor();
 
-          
-
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+            services.AddHttpContextAccessor();  
             services.AddControllersWithViews();
             // using Microsoft.EntityFrameworkCore;
             services.AddDbContext<AppIdentityDbContext>(options =>
